@@ -1,0 +1,11 @@
+pyqt5
+aiosmtplib
+schedule
+pandas
+matplotlib
+cryptography
+dnspython
+flask
+llama-cpp-python
+huggingface_hub
+requests

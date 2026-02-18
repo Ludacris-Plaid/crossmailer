@@ -1,0 +1,19 @@
+[Unit]
+Description=CrossMailer Headless
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/crossmailer
+Environment=QT_QPA_PLATFORM=offscreen
+Environment=CROSSMAILER_PASS=change_me
+Environment=CROSSMAILER_OLLAMA_MODEL=spamqueen:latest
+Environment=CROSSMAILER_TRACK_HOST=127.0.0.1
+Environment=CROSSMAILER_TRACK_PORT=5000
+ExecStart=/opt/crossmailer/venv/bin/python /opt/crossmailer/run_crossmailer_headless.py --ai-autopilot --warmup --rate 200 --template /opt/crossmailer/templates/campaign.html --from you@yourdomain.com --domain yourdomain.com --subject "Hello"
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+

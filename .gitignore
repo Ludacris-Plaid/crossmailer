@@ -1,0 +1,17 @@
+venv/
+__pycache__/
+*.pyc
+
+data/
+*.db
+*.log
+
+app_startup.log
+startup_out.log
+startup_err.log
+test_run.log
+
+*.gguf
+*.bin
+
+.gcloud_config/
